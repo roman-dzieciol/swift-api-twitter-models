@@ -115,7 +115,7 @@ extension Media: Codable {}
 
 extension Media {
 
-    func url(for sizeName: Media.Sizes.Name) -> URL? {
+    public func url(for sizeName: Media.Sizes.Name) -> URL? {
         guard
             let urlText = media_url_https,
             let url = URL(string: urlText),
