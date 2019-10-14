@@ -13,17 +13,17 @@ extension Media {
         /// Width in pixels of this size. Example:
         ///
         ///     "w":150
-        public let w: Int?
+        public let w: Int
         
         /// Height in pixels of this size. Example:
         ///
         ///     "h":150
-        public let h: Int?
+        public let h: Int
         
         /// Resizing method used to obtain this size. A value of fit means that the media was resized to fit one dimension, keeping its native aspect ratio. A value of crop means that the media was cropped in order to fit a specific resolution. Example:
         ///
         ///     "resize":"crop"
-        public let resize: String?
+        public let resize: String
     }
     
     /// An object showing available sizes for the media file. Example:
@@ -82,6 +82,25 @@ extension Media {
 
 extension Media.Size: Codable {}
 extension Media.Sizes: Codable {}
+
+extension Media.Sizes {
+
+    public enum Name: String, Codable, CaseIterable {
+        case thumb
+        case large
+        case medium
+        case small
+    }
+
+    public func named(_ name: Name) -> Media.Size? {
+        switch name {
+        case .thumb: return thumb
+        case .large: return large
+        case .medium: return medium
+        case .small: return small
+        }
+    }
+}
 
 
 
