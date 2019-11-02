@@ -11,6 +11,11 @@ public struct Hashtag {
     ///
     ///     "text":"nodejs"
     public let text: String?
+
+    public init(indices: [Int]?, text: String?) {
+        self.indices = indices
+        self.text = text
+    }
 }
 
 extension Hashtag: Codable {}

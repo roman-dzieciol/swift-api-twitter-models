@@ -121,7 +121,30 @@ public struct User: Identifiable {
     ///
     ///     "withheld_scope": "user"
     public let withheld_scope: String?
-    
+
+    public init(id: Int64, id_str: String, name: String?, screen_name: String?, location: String?, url: String?, description: String?, protected: Bool?, verified: Bool?, followers_count: Int?, friends_count: Int?, listed_count: Int?, favourites_count: Int?, statuses_count: Int?, created_at: String?, profile_banner_url: String?, profile_image_url_https: String?, default_profile: Bool?, default_profile_image: Bool?, withheld_in_countries: [String]?, withheld_scope: String?) {
+        self.id = id
+        self.id_str = id_str
+        self.name = name
+        self.screen_name = screen_name
+        self.location = location
+        self.url = url
+        self.description = description
+        self.protected = protected
+        self.verified = verified
+        self.followers_count = followers_count
+        self.friends_count = friends_count
+        self.listed_count = listed_count
+        self.favourites_count = favourites_count
+        self.statuses_count = statuses_count
+        self.created_at = created_at
+        self.profile_banner_url = profile_banner_url
+        self.profile_image_url_https = profile_image_url_https
+        self.default_profile = default_profile
+        self.default_profile_image = default_profile_image
+        self.withheld_in_countries = withheld_in_countries
+        self.withheld_scope = withheld_scope
+    }
 }
 
 extension User: Codable {}

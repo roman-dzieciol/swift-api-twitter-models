@@ -11,6 +11,11 @@ public struct Coordinates {
     ///
     /// "type": "Point"
     public let type: String?
+    
+    public init(coordinates: [Double]?, type: String?) {
+        self.coordinates = coordinates
+        self.type = type
+    }
 }
 
 extension Coordinates: Codable {}

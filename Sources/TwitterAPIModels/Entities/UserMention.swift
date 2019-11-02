@@ -2,6 +2,7 @@
 import Foundation
 
 public struct UserMention: Identifiable {
+
     
     /// ID of the mentioned user, as an integer. Example:
     ///
@@ -27,7 +28,14 @@ public struct UserMention: Identifiable {
     ///
     ///     "screen_name":"twitterapi"
     public let screen_name: String?
-    
+
+    public init(id: Int64, id_str: String, indices: [Int]?, name: String?, screen_name: String?) {
+        self.id = id
+        self.id_str = id_str
+        self.indices = indices
+        self.name = name
+        self.screen_name = screen_name
+    }
 }
 
 extension UserMention: Codable {}

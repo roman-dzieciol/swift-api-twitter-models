@@ -157,7 +157,15 @@ public struct Entities {
     ///         ]
     ///       }
     public let polls: [Poll]?
-    
+
+    public init(hashtags: [Hashtag]?, media: [Media]?, urls: [URLEntity]?, user_mentions: [UserMention]?, symbols: [Symbol]?, polls: [Poll]?) {
+        self.hashtags = hashtags
+        self.media = media
+        self.urls = urls
+        self.user_mentions = user_mentions
+        self.symbols = symbols
+        self.polls = polls
+    }
 }
 
 extension Entities: Codable {}

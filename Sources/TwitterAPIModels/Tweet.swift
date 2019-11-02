@@ -245,6 +245,12 @@ public final class Tweet: Identifiable {
         public let tag: String
         public let id: Int64
         public let id_str: String
+
+        public init(tag: String, id: Int64, id_str: String) {
+            self.tag = tag
+            self.id = id
+            self.id_str = id_str
+        }
     }
     
     /// Present in filtered products such as Twitter Search and PowerTrack. Provides the id and tag associated with the rule that matched the Tweet. With PowerTrack, more than one rule can match a Tweet. See more documentation HERE. Example:
@@ -267,6 +273,11 @@ public final class Tweet: Identifiable {
     public struct CurrentUserRetweet {
         public let id: Int64
         public let id_str: String
+        
+        public init(id: Int64, id_str: String) {
+            self.id = id
+            self.id_str = id_str
+        }
     }
     /// Perspectival Only surfaces on methods supporting the include_my_retweet parameter, when set to true. Details the Tweet ID of the user’s own retweet (if existent) of this Tweet. Example:
     ///

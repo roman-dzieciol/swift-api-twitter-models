@@ -2,7 +2,7 @@
 import Foundation
 
 public struct URLEntity {
-    
+
     /// URL pasted/typed into Tweet. Example:
     ///
     ///     "display_url":"bit.ly/2so49n2"
@@ -25,7 +25,7 @@ public struct URLEntity {
     
     
     public struct Metadata {
-        
+
         /// The fully unwound version of the link included in the Tweet. Example:
         ///
         ///     "url":"https:/// blog.twitter.com/en_us/topics/insights/2016/using-twitter-as-a-go-to-communication-channel-during-severe-weather-events.html"
@@ -45,10 +45,25 @@ public struct URLEntity {
         ///
         ///     "description":"Using Twitter as a ‘go-to’ communication channel during severe weather"
         public let description: String?
+
+        public init(url: String?, status: Int?, title: String?, description: String?) {
+            self.url = url
+            self.status = status
+            self.title = title
+            self.description = description
+        }
     }
     
     /// If you are using the Expanded and/or Enhanced URL enrichments, the metadata is available under the unwound attribute
     public let unwound: Metadata?
+
+    public init(display_url: String?, expanded_url: String?, indices: [Int]?, url: String?, unwound: URLEntity.Metadata?) {
+        self.display_url = display_url
+        self.expanded_url = expanded_url
+        self.indices = indices
+        self.url = url
+        self.unwound = unwound
+    }
     
 }
 

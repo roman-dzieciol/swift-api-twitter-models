@@ -9,7 +9,7 @@ extension Media {
     ///
     ///     {"h":150, "resize":"crop", "w":150}
     public struct Size {
-        
+
         /// Width in pixels of this size. Example:
         ///
         ///     "w":150
@@ -24,6 +24,12 @@ extension Media {
         ///
         ///     "resize":"crop"
         public let resize: String
+
+        public init(w: Int, h: Int, resize: String) {
+            self.w = w
+            self.h = h
+            self.resize = resize
+        }
     }
     
     /// An object showing available sizes for the media file. Example:
@@ -53,6 +59,7 @@ extension Media {
     ///         }
     ///     }
     public struct Sizes {
+
         /// Information for a thumbnail-sized version of the media. Example:
         ///
         ///     "thumb":{"h":150, "resize":"crop", "w":150}
@@ -76,6 +83,13 @@ extension Media {
         ///     "small":{"h":1366, "resize":"fit", "w":2048}
         /// Large-sized photo media will be limited to fit within a 2048x2048 boundary.
         public let small: Size?
+
+        public init(thumb: Media.Size?, large: Media.Size?, medium: Media.Size?, small: Media.Size?) {
+            self.thumb = thumb
+            self.large = large
+            self.medium = medium
+            self.small = small
+        }
     }
     
 }

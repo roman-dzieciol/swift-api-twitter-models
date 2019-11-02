@@ -4,8 +4,14 @@ import Foundation
 public struct Poll {
     
     public struct Option {
+
         public let position: Int?
         public let text: String?
+
+        public init(position: Int?, text: String?) {
+            self.position = position
+            self.text = text
+        }
     }
     
     /// An array of options, each having a poll position, and the text for that position. Example:
@@ -28,7 +34,13 @@ public struct Poll {
     ///
     ///     "duration_minutes": 60
     public let duration_minutes: String?
-    
+
+    public init(options: [Poll.Option]?, end_datetime: String?, duration_minutes: String?) {
+        self.options = options
+        self.end_datetime = end_datetime
+        self.duration_minutes = duration_minutes
+    }
+
 }
 
 extension Poll: Codable {}

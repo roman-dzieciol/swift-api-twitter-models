@@ -109,6 +109,21 @@ public struct Media: Identifiable {
     ///     "url":"http:/// t.co/rJC5Pxsu"
     /// url    String
     public let url: String?
+
+    public init(display_url: String?, expanded_url: String?, id: Int64, id_str: String, indices: [Int]?, media_url: String?, media_url_https: String?, sizes: Media.Sizes?, source_status_id: Int64?, source_status_id_str: String?, type: String?, url: String?) {
+        self.display_url = display_url
+        self.expanded_url = expanded_url
+        self.id = id
+        self.id_str = id_str
+        self.indices = indices
+        self.media_url = media_url
+        self.media_url_https = media_url_https
+        self.sizes = sizes
+        self.source_status_id = source_status_id
+        self.source_status_id_str = source_status_id_str
+        self.type = type
+        self.url = url
+    }
 }
 
 extension Media: Codable {}

@@ -33,6 +33,11 @@ public struct BoundingBox {
     ///
     ///     "type":"Polygon"
     public let type: String?
+
+    public init(coordinates: [[[Double]]]?, type: String?) {
+        self.coordinates = coordinates
+        self.type = type
+    }
 }
 
 extension BoundingBox: Codable {}

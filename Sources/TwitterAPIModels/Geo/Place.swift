@@ -71,7 +71,17 @@ public struct Place: Identifiable {
     ///
     ///     "attributes": {}
     //public let attributes: Object?
-    
+
+    public init(id: String, url: String?, place_type: String?, name: String?, full_name: String?, country_code: String?, country: String?, bounding_box: BoundingBox?) {
+        self.id = id
+        self.url = url
+        self.place_type = place_type
+        self.name = name
+        self.full_name = full_name
+        self.country_code = country_code
+        self.country = country
+        self.bounding_box = bounding_box
+    }
 }
 
 
